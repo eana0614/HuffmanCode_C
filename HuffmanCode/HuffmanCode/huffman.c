@@ -5,8 +5,21 @@
 #include<string.h>
 #include<memory.h>
 
+struct node {
+	char c;
+	int freq;
+	struct node *left;
+	struct node *right;
+	char path[14];
+
+};
+
+typedef struct node Node;
+int treeLength = 27;
+
 int initArray(Node* arr, int lenght);
 void countTreeElement(char* filename, Node* t);
+void sortTree(Node *t);
 Node* extractMin(Node* q);
 void insertTree(Node *q, Node z);
 Node* huffman(Node* t);
@@ -14,17 +27,6 @@ void createTable(Node* t, Node* table);
 void writeTable(char* filename, Node* table);
 void encodingHuffman(char* read, char* write, Node *ta);
 void decodingHuffman(char* read, char* write, Node *ta);
-
-typedef struct node {
-	char c;
-	int freq;
-	struct node *left;
-	struct node *right;
-	char path[14];
-
-} Node;
-
-int treeLength = 27;
 
 int main(void) {
 
