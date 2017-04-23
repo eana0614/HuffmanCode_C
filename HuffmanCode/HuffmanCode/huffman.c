@@ -79,7 +79,7 @@ void decodingHuffman(char* read, char* write, Node *ta) {
 	while (!feof(r)) {
 		fscanf(r, "%c", &temp);
 		re[0] = temp;
-		strcat(str, re, 1);
+		strncat(str, re, 1);
 
 		if (strlen(str) >= 3) {
 			for (int i = 0; i < 27; i++) {
